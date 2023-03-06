@@ -10,3 +10,5 @@ if x2==x1:
 a=(y2-y1)/(x2-x1)
 b=y2-x2*a
 print('y={}x+{}'.format(a,b))
+
+print("ovo je vježba")
