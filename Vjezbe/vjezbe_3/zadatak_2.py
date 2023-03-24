@@ -14,7 +14,7 @@ def iteracija(N):
 iteracija(200)
 iteracija(2000)
 iteracija(20000)
-
+#s povečanjem broja N možemo primjetiti da nam se iteracija blago povečava do broja 5
 
         
 
