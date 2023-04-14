@@ -40,4 +40,6 @@ while q<(len(φ)): #možemo napraviti lisu umnpška a(Dt)i phi da dobijemo M(tj.
 
 plt.scatter(φ,M,color = 'green')
 plt.plot(φ,os_y,color='red')
+plt.xlabel('\u03A6 ''/ [rad]')
+plt.ylabel('M /Nm')
 plt.show()
