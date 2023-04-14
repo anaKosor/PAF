@@ -35,9 +35,10 @@ class Particle:
         ax=0
         ay=-9.81
         self.vx=self.vx + ax*t
+        self.y=self.y + self.vy*t
         self.vy=self.vy+ay*t
         self.x=self.x +self.vx*t
-        self.y=self.y + self.vy*t
+        
         return self.x,self.y
 
     def domet(self,t):
