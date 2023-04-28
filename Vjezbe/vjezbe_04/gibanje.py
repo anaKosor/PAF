@@ -5,7 +5,7 @@ import math
 
 p1=pt.Particle(10,45,0,0)
 
-Numericki_domet=p1.domet(0.01)
+Numericki_domet=p1.domet(0.001)
 
 def analiticki_domet(v0,kut,x0,y0):
     kut_radiani=kut*(math.pi/180)
