@@ -10,12 +10,12 @@ def derivacija(funkcija,x,dx,metoda=3): # prva metoda ,metoda ce uvjek biti 3 os
         d=((funkcija(x + dx) - funkcija(x)) / (dx))
         return d
 #rderivacija kao ulazne parametre funkciju i gornju i donju granicu raspona derivacije
-def raspon_derivacije(funkcija,gornja,donja,dx,metoda=3): #druga metoda
-    tocke = np.linspace(gornja, donja, 10000)
-    derivacija = derivacija(funkcija, tocke)
+def raspon_derivacije(funkcija,gornja,donja,dx,metoda=3): 
+    tocke = np.arange(gornja, donja, dx)
+    deerivacija = derivacija(funkcija, tocke,dx)
     return tocke, derivacija
 
-# pravokutnu aproksimacija integrala(bitno da za gornju beđu poceti od 2.clana[1],a za donju od 1.tj[0])gornja(= f(x1)Δx + f(x2)Δx + ⋯ + f(xn)Δx),
+# pravokutnu aproksimacija integrala(bitno da za gornju beđu poceti od 2.clana[1],a za donju od 1.tj[0])gornja(= f(x1)Δx + f(x2)Δx + ⋯ + f(xn)Δx)
 def pintegral(funkcija,donja, gornja,dx):
     tockeL=[]      #lista tocaka za donju medu
     donjameda=[]   #i tu ce biti lista tocaka od donje sume( f(x1)Δx + f(x2)Δx + ⋯ + f(xn)Δx))

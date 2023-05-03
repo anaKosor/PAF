@@ -8,7 +8,9 @@ def funkcija(x):
 def deriviranaf(x):
     return 15*x**2-4*x+2
 #popzvat cemo iz ir calsulus da izracuna raspon al za na razlicina epsilona tj.dx(0.1 i 0.01)
-#iz prezentacije iscitamo  da ce gornja biti -1 a donja 2
-E1=cl.raspon_derivacije(funkcija,gornja,donja,dx=0.1) #koristi se metoda 3 al ako zelimo metodu 2 cl.raspon_derivacije(funkcija,gornja,donja,dx=0.1,2)
-E2=cl.raspon_derivacije(funkcija,gornja,donja,dx=0.01) 
+#x i h -2,2
+E1=cl.raspon_derivacije(funkcija,-2,2,0.1) #koristi se metoda 3 al ako zelimo metodu 2 cl.raspon_derivacije(funkcija,gornja,donja,dx=0.1,2)
+E2=cl.raspon_derivacije(funkcija,-2,2,0.01)
 
+plt.plot(E1,E2)
+plt.show()
