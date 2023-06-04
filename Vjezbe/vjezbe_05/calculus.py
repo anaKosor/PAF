@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def derivacija(funkcija,x,dx,metoda=3): # prva metoda ,metoda ce uvjek biti 3 osim ako se bas ne zapise kao parametar 2
+def derivacija23(funkcija,x,dx,metoda=3): # prva metoda ,metoda ce uvjek biti 3 osim ako se bas ne zapise kao parametar 2
     if metoda=='3':
         d=(( funkcija(x + dx) - funkcija(x - dx) ) / (2 * dx) )
         return d
@@ -10,10 +10,16 @@ def derivacija(funkcija,x,dx,metoda=3): # prva metoda ,metoda ce uvjek biti 3 os
         d=((funkcija(x + dx) - funkcija(x)) / (dx))
         return d
 #rderivacija kao ulazne parametre funkciju i gornju i donju granicu raspona derivacije
-def raspon_derivacije(funkcija,gornja,donja,dx,metoda=3): 
-    tocke = np.arange(gornja, donja, dx)
-    deerivacija = derivacija(funkcija, tocke,dx)
-    return tocke, derivacija
+def derivacije(funkcija,gornja,donja,dx,metoda=3): 
+    tocke = np.arange(donja, gornja, dx)
+    list=[]
+    if metoda=='3':
+        for i in tocke:
+            list.append(derivacija23(funkcija,i,dx))
+    else:
+        for i in tocke:
+            list.append(derivacija23(funkcija,i,dx,2))
+    return tocke, list
 
 # pravokutnu aproksimacija integrala(bitno da za gornju beđu poceti od 2.clana[1],a za donju od 1.tj[0])gornja(= f(x1)Δx + f(x2)Δx + ⋯ + f(xn)Δx)
 def pintegral(funkcija,donja, gornja,dx):
@@ -34,7 +40,13 @@ def pintegral(funkcija,donja, gornja,dx):
         gornjameda.append(gornja_suma)
     return tockeL,tockeU,gornjameda,donjameda
 
-
+def integral_trapez(f,donja,gornja,n):
+    list=np.linspace(donja,gornja,n+1)
+    x=(gornja-donja)/n
+    int=0
+    for i in range(n):
+        int+=x*(f(list[i])+f(list[i+1]))/2
+    return integral
 
 
 

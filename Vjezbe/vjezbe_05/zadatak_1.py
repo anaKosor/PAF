@@ -1,16 +1,17 @@
-import matplotlib.pyplot as plt
-import calculus as cl
+import calculus as cal
 import numpy as np
+import matplotlib.pyplot as plt
 
-#iz prezentacije uzimamo 5x**3-2x**2+2x-3 i ta df 15x**2-4x+2
-def funkcija(x):
-    return 5*x**3-2*x**2+2*x-3
-def deriviranaf(x):
-    return 15*x**2-4*x+2
-#popzvat cemo iz ir calsulus da izracuna raspon al za na razlicina epsilona tj.dx(0.1 i 0.01)
-#x i h -2,2
-E1=cl.raspon_derivacije(funkcija,-2,2,0.1) #koristi se metoda 3 al ako zelimo metodu 2 cl.raspon_derivacije(funkcija,gornja,donja,dx=0.1,2)
-E2=cl.raspon_derivacije(funkcija,-2,2,0.01)
+def f(x):
+    return 5*x**2 - 2*x
 
-plt.plot(E1,E2)
+def df(x):
+    return 10*(x) - 2
+
+x, y = cal.derivacije(f, -3, 3, 0.1)
+x1, y1 = cal.derivacije(f, -3, 3, 0.01)
+x_list = [x for x in np.arange(-3, 3, 0.01)]
+plt.scatter(y, x)
+plt.scatter(y1, x1)
+plt.plot(x_list, df(np.array(x_list)), c = 'r')
 plt.show()
