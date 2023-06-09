@@ -43,7 +43,7 @@ S1 = Sustav(masaZemlje, masaSunca, udaljZemlje, udaljSunca, brzinZemlje, brzSunc
 
 z, s = S1.interakcija(t)
 for i in range(len(z)):
-    plt.plot(z[i, 0], z[i, 1],'b.')
+    plt.plot(z[i, 0], z[i, 1],'b.') #'b.' (crtanje plavih točaka),'yo' označava žute točke
 
 for i in range(len(s)):
     plt.plot(s[i, 0], s[i, 1],'yo')
