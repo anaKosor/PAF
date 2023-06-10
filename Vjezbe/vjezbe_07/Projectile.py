@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import math
 
 class Projectile:
-    def __init__(self,kut,v0,m,dt,C=0.2,A=0.1,p=1.293,x=0,y=0): #m-masa tijela,vo-pocetna brzina,kut,x0,y0-pocetni polozaj,dt
+    def __init__(self,kut,v0,m,dt,C,A=0.1,p=1.293,x=0,y=0): #m-masa tijela,vo-pocetna brzina,kut,x0,y0-pocetni polozaj,dt
         self.kut=kut
         self.p=p #p(phi)-gustoća medija(zrak)
         self.C=C #C(Cd)-koeficijent trenja
