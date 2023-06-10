@@ -22,7 +22,6 @@ class Projectile:
     
     def plot(self): #metoda za plot koristeci runge-kutta metodu 4.reda
         g = 9.81
-        t0 = 0.0
         
         while self.y0 >= 0:
             k1vx = (- np.sign(self.vx) * ((self.density * self.C * self.A) / (2 * self.mass)) * (self.vx)**2) * self.dt
